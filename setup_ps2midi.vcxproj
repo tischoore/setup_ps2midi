@@ -48,10 +48,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\setup_ps2midi;$(ProjectDir)..\..\..\..\..\Program Files (x86)\Arduino\libraries;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.14\libraries;$(ProjectDir)..\libraries;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.14\cores\arduino;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.14\variants\standard;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\avr\include\;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\avr\include\avr\;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\setup_ps2midi;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.14\libraries\EEPROM\src;$(ProjectDir)..\..\..\..\..\Program Files (x86)\Arduino\libraries;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.14\libraries;$(ProjectDir)..\..\Arduino\libraries;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.14\cores\arduino;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.14\variants\standard;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\avr\include\;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\avr\include\avr\;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.3-arduino2\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)__vm\.setup_ps2midi.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
-      <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;F_CPU=16000000L;ARDUINO=106012;ARDUINO_AVR_UNO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=106012;ARDUINO_AVR_UNO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -80,7 +80,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="setup_serializer.h" />
     <ClInclude Include="__vm\.setup_ps2midi.vsarduino.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="setup_serializer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="setup_00.txt" />
   </ItemGroup>
   <PropertyGroup>
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
@@ -88,4 +95,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties arduino.upload.port="COM5" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
